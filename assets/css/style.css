@@ -9,4 +9,23 @@ body {
 }
 
 
+.text-shadow{
+    text-shadow: 8px 8px 8px rgb(0, 0, 0);
+    box-shadow: 0 5px 15px rgba(121, 156, 244, 0.4);
+    backdrop-filter: blur(30px);
+}
 
+
+.card{
+    background-color: #3b3b3b;
+    box-shadow: 0 5px 15px rgba(121, 156, 244, 0.4);
+    width:18%
+}
+
+p {
+    color: white;
+}
+
+h3 {
+    color: white;
+}
