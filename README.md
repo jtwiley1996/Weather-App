@@ -15,3 +15,8 @@
 For this project, I used [OpenWeatherApi](https://openweathermap.org/forecast5#data), [Dayjs](https://day.js.org/en/), and [Bootstrap](https://getbootstrap.com/).
 
 I also used Stack overflow for help on the javascript, as well as W3schools.org and Youtube for help implementing the 3rd Party Apis.
+
+## Future Goals
+* I need to be able to add states as well to improve accuracy
+* Improve my thumbnail images
+* If a city doesn't exist, I'd like to have it not show on the side bar

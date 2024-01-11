@@ -1,8 +1,9 @@
 var currentDate = dayjs().format('MM/DD/YYYY');
 var searchButton = document.querySelector('#search-btn');
-var cityInput = document.querySelector('#city-input')
-var savedCitiesContainer = document.querySelector('#saved-cities')
-var currentWeatherContainer = document.querySelector('#current-weather-container')
+var clearButton = document.querySelector('#clear-btn');
+var cityInput = document.querySelector('#city-input');
+var savedCitiesContainer = document.querySelector('#saved-cities');
+var currentWeatherContainer = document.querySelector('#current-weather-container');
 
 var latitude;
 var longitude;
@@ -33,11 +34,11 @@ function saveCity(){
         getWeather(inputData);
         cityInput.value='';
     } else {
-        console.log('City already exists in the list.');
+        alert('City is already listed.');
     }
 }
 
-//Display the cities on the side of the page
+//Displays cities
 function displayCities(){
     savedCitiesContainer.innerHTML = '';
     for (let i = 0; i < cityData.length; i++){
@@ -51,8 +52,19 @@ function displayCities(){
         console.log(cityData[i]);
     }
 }
+//removes listed cities
+clearButton.addEventListener('click', function() {
+    clearCities();
+    localStorage.removeItem('cityData');
+});
 
-//Call the geolocation API to grab coordinates of the city input
+function clearCities() {
+    savedCitiesContainer.innerHTML = '';
+    localStorage.removeItem('cityData');
+    cityData = [];
+}
+
+//grab coordinates of the city input
 function getCoords(cityName) {
     return fetch('https://api.openweathermap.org/geo/1.0/direct?q=' + cityName + '&appid=bf70693fc02342902eb9d0f51befef5a')
         .then(response => response.json())
