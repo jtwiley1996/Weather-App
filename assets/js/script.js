@@ -9,10 +9,15 @@ var longitude;
 
 var cityData = JSON.parse(localStorage.getItem('cityData')) || [];
 
-//When button is pressed, 
+//Button press 
 searchButton.addEventListener('click',function(){
-    saveCity();
-    
+    saveCity(); 
+});
+//Enter press
+cityInput.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        saveCity();
+    }
 });
 
 //Save city locally
